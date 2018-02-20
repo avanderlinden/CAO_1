@@ -8,11 +8,22 @@
 #ifndef COMPUTER_H_
 #define COMPUTER_H_
 
+#include "program.h"
+#include <string>
+#include <iostream>
+
 class Computer
 {
 public:
+
   /*
-   * Initializes the Computer object.
+   * Initializes the Computer object with given variables.
+   *
+   * @param clockRateGHz clock rate of the CPU in GHZ
+   * @param cpiArith CPI of Arithmetic instructions
+   * @param cpiStore CPI of Store instructions
+   * @param cpiLoad CPI of Load instructions
+   * @param cliBranch CPI of Branch instructions
    */
   Computer (double clockRateGHz, double cpiArith,
 		  double cpiStore, double cpiLoad, double cpiBranch);
@@ -26,19 +37,43 @@ public:
   /*
    * Calculates average cycles per instruction
    *
-   * Return: double average cycles per instruction
+   * @return double average cycles per instruction
    */
   double calculateGlobalCPI (void);
 
 
-private:
+  /*
+   * Calculates the execution/CPU time of a given program.
+   *
+   * @param prog Program the Program object
+   * @see Program
+   *
+   * @return the execution time in seconds [sec.]
+   */
+  double calculateExecutionTime(Program prog);
+
+  /*
+   * Calculates how many MIPS (Million Instructions Per Second) the
+   * computer can process.
+   *
+   */
+  double calculateMIPS(void);
+
+  /*
+   * Calculates how many MIPS (Million Instructions Per Second) the
+   * computer can process on a given program.
+   */
+  double calculateMIPS(Program prog);
+
+
   double clockRateGHz;  // Clock rate in GHz
   double cpiArith;  // CPI of instruction class Arith
   double cpiStore;  // CPI of instruction class Store
   double cpiLoad;  // CPI of instruction class Load
   double cpiBranch;  // CPI of instruction class Branch
-
 };
+
+std::ostream& operator<<(std::ostream& out, const Computer& pc);
 
 
 #endif /* COMPUTER_H */

@@ -1,3 +1,5 @@
-computer.o: ../computer.cpp ../computer.h
+computer.o: ../computer.cpp ../computer.h ../program.h
 
 ../computer.h:
+
+../program.h:

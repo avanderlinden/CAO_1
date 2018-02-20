@@ -42,6 +42,14 @@ public:
 	void printStats (void);
 
 
+
+	int getNumTotal(void){ return this->numTotal;}
+	int getNumStore(void){return this->numStore;}
+	int getNumLoad(void){return this->numLoad;}
+	int getNumBranch(void){return this->numBranch;}
+	int getNumArith(void){return this->numArith;}
+
+
 private:
 	int numArith;  // Arithmetic and logic calculations
 	int numStore;  // Store data into memory
