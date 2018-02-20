@@ -37,17 +37,16 @@ public:
 
 
 	/*
-	 * Prints all variables from Program objects
+	 * Prints all variables from Program objects.
 	 */
 	void printStats (void);
 
 
-
-	int getNumTotal(void){ return this->numTotal;}
-	int getNumStore(void){return this->numStore;}
-	int getNumLoad(void){return this->numLoad;}
-	int getNumBranch(void){return this->numBranch;}
-	int getNumArith(void){return this->numArith;}
+	int getNumTotal(void) const { return this->numTotal;}
+	int getNumStore(void) const {return this->numStore;}
+	int getNumLoad(void) const {return this->numLoad;}
+	int getNumBranch(void) const {return this->numBranch;}
+	int getNumArith(void) const {return this->numArith;}
 
 
 private:

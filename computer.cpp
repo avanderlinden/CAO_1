@@ -17,27 +17,13 @@ Computer::Computer(double clockRateGHz, double cpiArith, double cpiStore,
 
 }
 
-//std::ostream Computer::stats()
-//{
-//	std::ostream stats;
-//
-//	stats<<"Clock rate\t: " << this->clockRateGHz << " [GHz]\n";
-//	stats<<"CPI Arith\t: " << this->cpiArith << " [cpi]\n";
-//	stats<<"CPI Store\t: " << this->cpiStore << " [cpi]\n";
-//	stats<<"CPI Load\t: " << this->cpiLoad << " [cpi]\n";
-//	stats<<"CPI Branch\t: " << this->cpiBranch << " [cpi]\n";
-//
-//	return stats;
-//
-//}
-
 std::ostream& operator<<(std::ostream& out, const Computer& pc)
 {
-	out<<"Clock rate\t: " << pc.clockRateGHz << " [GHz]\n";
-	out<<"CPI Arith\t: " << pc.cpiArith << " [cpi]\n";
-	out<<"CPI Store\t: " << pc.cpiStore << " [cpi]\n";
-	out<<"CPI Load\t: " << pc.cpiLoad << " [cpi]\n";
-	out<<"CPI Branch\t: " << pc.cpiBranch << " [cpi]\n";
+	out<<"Clock rate\t: " << pc.getClockRateGHz() << " [GHz]\n";
+	out<<"CPI Arith\t: " << pc.getCpiArith() << " [cpi]\n";
+	out<<"CPI Store\t: " << pc.getCpiStore() << " [cpi]\n";
+	out<<"CPI Load\t: " << pc.getCpiLoad() << " [cpi]\n";
+	out<<"CPI Branch\t: " << pc.getCpiBranch() << " [cpi]\n";
 
     return out;
 }

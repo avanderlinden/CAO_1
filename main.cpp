@@ -11,30 +11,6 @@
 
 int main()
 {
-
-	/*
-	Computer pc  = Computer(2.2, 1.2, 2.3, 3.4, 4.5);
-
-	//pc.printStats();
-
-	//std::cout << "\nGlobal Cycles per Instruction: ";
-	//std::cout << pc.calculateGlobalCPI() << " [cpi]\n\n";
-
-	Program prog1 = Program(2, 3, 4, 5);
-	//prog1.printStats();
-
-	std::cout << "\n\n";
-
-	Program prog2 = Program(20, 0.2, 0.3, 0.4);
-	//prog2.printStats();
-
-
-	std::cout << pc.calculateExecutionTime(prog2) << '\n';
-	std::cout << pc.calculateMIPS() << '\n';
-	std::cout << pc.calculateMIPS(prog1) << '\n';
-	std::cout << pc.calculateMIPS(prog2) << '\n';
-
-	*/
 	// initialize computers
 	Computer computer1 = Computer(1.0, 2, 2, 3, 4);
 	Computer computer2 = Computer(1.2, 2, 3, 4, 3);
@@ -45,6 +21,7 @@ int main()
 	Program programB = Program(2000, 0.1, 0.4, 0.25);
 	Program programC = Program(500, 100, 2000, 200);
 
+	// calculate and print stats for computer1 and programA, B and C.
 	std::cout << "---- computer 1 ----\n"
 		<< computer1 << "\n"
 		<< "Global MIPS Rating\t: " << computer1.calculateMIPS() << "\n"
@@ -53,6 +30,7 @@ int main()
 		<< "MIPS Program C\t\t: " << computer1.calculateMIPS(programC) << "\n"
 		<< "\n\n";
 
+	// calculate and print stats for computer2 and programA, B and C.
 	std::cout << "---- computer 2 ----\n"
 			<< computer2 << "\n"
 			<< "Global MIPS Rating\t: " << computer2.calculateMIPS() << "\n"
@@ -61,6 +39,7 @@ int main()
 			<< "MIPS Program C\t\t: " << computer2.calculateMIPS(programC) << "\n"
 			<< "\n\n";
 
+	// calculate and print stats for computer3 and programA, B and C.
 	std::cout << "---- computer 3 ----\n"
 			<< computer3 << "\n"
 			<< "Global MIPS Rating\t: " << computer3.calculateMIPS() << "\n"

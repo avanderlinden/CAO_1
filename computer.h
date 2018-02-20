@@ -9,7 +9,6 @@
 #define COMPUTER_H_
 
 #include "program.h"
-#include <string>
 #include <iostream>
 
 class Computer
@@ -66,6 +65,13 @@ public:
   double calculateMIPS(Program prog);
 
 
+  double getClockRateGHz(void) const { return this->clockRateGHz;}
+  double getCpiArith(void) const {return this->cpiArith;}
+  double getCpiStore(void) const {return this->cpiStore;}
+  double getCpiLoad(void) const {return this->cpiLoad;}
+  double getCpiBranch(void) const {return this->cpiBranch;}
+
+private:
   double clockRateGHz;  // Clock rate in GHz
   double cpiArith;  // CPI of instruction class Arith
   double cpiStore;  // CPI of instruction class Store
@@ -73,6 +79,13 @@ public:
   double cpiBranch;  // CPI of instruction class Branch
 };
 
+/*
+ * Overloads the << operator for the class computer.
+ * when << is called the computer statistics are returned in a
+ * ostream.
+ *
+ * @return ostream with the computer stats.
+ */
 std::ostream& operator<<(std::ostream& out, const Computer& pc);
 
 
